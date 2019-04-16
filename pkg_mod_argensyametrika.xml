@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.0" method="upgrade">
+	<name>Argens Yandex Metrika Package</name>
+	<packagename>mod_argensyametrika</packagename>
+	<author>Arkadiy</author>
+	<creationDate>09.01.2015</creationDate>
+	<copyright>(C) 2014 Arkadiy Sedelnikov</copyright>
+	<license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>a.sedelnikov@gmail.com</authorEmail>
+	<authorUrl>http://argens.ru</authorUrl>
+	<version>1.1</version>
+	<url>http://argens.ru</url>
+	<packager>Arkadiy</packager>
+	<packagerurl>http://argens.ru</packagerurl>
+	<description></description>
+	<files>
+			<file type="module" id="mod_argensyametrika" method="upgrade" client="administrator">mod_argensyametrika.zip</file>
+			<file type="library" method="upgrade" client="site">lib_amcharts.zip</file>
+	</files>
+</extension>
