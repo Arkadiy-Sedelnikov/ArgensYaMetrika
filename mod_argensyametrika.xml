@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="administrator" method="upgrade">
+	<name>Argens Yandex Metrika</name>
+	<author>Arkadiy Sedelnikov</author>
+	<creationDate>29.05.2015</creationDate>
+	<copyright>Copyright (c)2015 Arkadiy Sedelnikov</copyright>
+	<license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>a.sedelnikov@gmail.com</authorEmail>
+	<authorUrl>argens.ru</authorUrl>
+	<version>1.5</version>
+	<description>Yandex Metrika Module</description>
+	<files>
+		<folder>elements</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename module="mod_argensyametrika">mod_argensyametrika.php</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="administrator/modules/mod_argensyametrika/elements">
+				<field
+						name="counter_id"
+						type="text"
+						label="№ счётчика"
+						description="№ счётчика метрики"
+						default=""/>
+				<field
+						name="app_url"
+						type="AppUrl"
+						label="Создать приложение"
+						description="Создать приложение для получения OAuth-токена. Указать права 'Яндекс.Метрика' - 'Получение статистики', чтение параметров своих и доверенных счётчиков. В поле 'Callback URL' вставить урл нажатием на 'Подставить URL для разработки'"
+						default=""/>
+				<field
+						name="app_id"
+						type="text"
+						label="ID приложения"
+						description="ID приложения"
+						default=""/>
+				<field
+						name="app_password"
+						type="text"
+						label="Пароль"
+						description="Пароль приложения"
+						default=""/>
+				<field
+						name="token_url"
+						type="TokenUrl"
+						label="Получить токен"
+						description="Получить OAuth-токен и вписать его в настройки. Для его получения вы должны быть авторизованы на сайте яндекса."
+						default=""/>
+				<field
+						name="app_token"
+						type="text"
+						label="Токен"
+						description="Токен приложения"
+						default=""/>
+			</fieldset>
+
+			<fieldset name="dop" label="Графики">
+				<field
+				name="date_diapazon"
+				type="list"
+				label="Диапазон дат"
+				description="Диапазон дат, показываемх на графике"
+				default="1">
+					<option value="week">1 неделя</option>
+					<option value="1">1 месяц</option>
+					<option value="2">2 месяц</option>
+					<option value="3">3 месяца</option>
+					<option value="4">4 месяца</option>
+					<option value="5">5 месяцев</option>
+					<option value="6">6 месяцев</option>
+					<option value="7">7 месяцев</option>
+					<option value="8">8 месяцев</option>
+					<option value="9">9 месяцев</option>
+					<option value="10">10 месяцев</option>
+					<option value="11">11 месяцев</option>
+					<option value="12">12 месяцев</option>
+				</field>
+
+				<field
+						name="date_group"
+						type="list"
+						label="Группировка данных"
+						description="Группировка данных по времени"
+						default="day">
+					<option value="day">День</option>
+					<option value="week">Неделя</option>
+					<option value="month">Месяц</option>
+				</field>
+
+				<field
+						name="height"
+						type="text"
+						label="Высота графика"
+						description="Высота графика в пикселях, только цифра."
+						default="400"/>
+
+				<field
+				name="show_visits"
+				type="radio"
+				label="Показывать визиты"
+				description="Показывать визиты"
+				class="btn-group btn-group-yesno"
+				default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+				name="show_page_views"
+				type="radio"
+				label="Показывать просмотры"
+				description="Показывать просмотры страниц"
+				class="btn-group btn-group-yesno"
+				default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+				name="show_new_visitors"
+				type="radio"
+				label="Показывать новых посетителей"
+				description="Показывать новых посетителей"
+				class="btn-group btn-group-yesno"
+				default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+				name="show_visitors"
+				type="radio"
+				label="Показывать посетителей"
+				description="Показывать посетителей"
+				class="btn-group btn-group-yesno"
+				default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
